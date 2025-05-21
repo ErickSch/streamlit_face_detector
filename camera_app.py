@@ -58,10 +58,10 @@ ctx = webrtc_streamer(
 )
 
 if ctx.video_processor:
-    if st.button("📸 Capturar foto"):
+    if st.button("📸"):
         captured_frame = ctx.video_processor.frame  # ahora frame limpio
         st.session_state['captured_frame'] = captured_frame
 
 if captured_frame is not None:
-    st.subheader("Imagen capturada:")
-    st.image(cv2.cvtColor(captured_frame, cv2.COLOR_BGR2RGB), use_column_width=True)
+    st.subheader("Captured Image:")
+    st.image(cv2.cvtColor(captured_frame, cv2.COLOR_BGR2RGB), use_container_width=True)
